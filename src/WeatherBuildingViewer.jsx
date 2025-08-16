@@ -104,7 +104,7 @@ function Building({
 
   const handlePointerUp = (e) => {
     if (!isDragging.current) {
-      onClick && onClick(); 
+      onClick && onClick();
     }
   };
 
@@ -138,7 +138,7 @@ function Building({
                 : new THREE.Color(0x000000);
             }
             if (!mat.emissive) mat.emissive = new THREE.Color(0x000000);
-            mat.emissive.setRGB(0.1, 0.2, 0.6);
+            mat.emissive.setRGB(0.1, 0.5, 1);
           } else if (mat.userData._baseEmissive) {
             mat.emissive.copy(mat.userData._baseEmissive);
           }
@@ -198,6 +198,8 @@ function Building({
               color={isGreen ? "#c4d37f" : "#7d7d7d"}
               roughness={0.6}
               metalness={0.2}
+              emissive={highlight ? "grey" : "black"}
+              emissiveIntensity={highlight ? 0.8 : 0}
             />
           </mesh>
         );
@@ -231,8 +233,8 @@ function Building({
 
       {/* Windows */}
       {[...Array(floors)].map((_, i) => {
-        if (i === 0) return null; 
-        const y = floorHeight / 2 + i * floorHeight + 0.5; 
+        if (i === 0) return null;
+        const y = floorHeight / 2 + i * floorHeight + 0.5;
         return [-3, 3].map((x, j) => (
           <group key={`window-front-${i}-${j}`}>
             {/* Outer frame */}
@@ -289,9 +291,9 @@ function Building({
 
       {/* Side windows */}
       {[...Array(floors)].map((_, i) => {
-        if (i === 0) return null; 
-        const y = floorHeight / 1.35 + i * floorHeight; 
-        const z = -2; 
+        if (i === 0) return null;
+        const y = floorHeight / 1.35 + i * floorHeight;
+        const z = -2;
         const windowWidth = 0.6;
         const windowHeight = 0.6;
         const windowDepth = 0.1;
@@ -371,8 +373,8 @@ function Building({
 
       {/* Balconies and doors */}
       {[...Array(floors)].map((_, i) => {
-        if (i === 0) return null; 
-        const y = floorHeight / 2 + i * floorHeight - 0.6; 
+        if (i === 0) return null;
+        const y = floorHeight / 2 + i * floorHeight - 0.6;
         const balconyWidth = 3;
         const balconyDepth = 0.7;
         const railingHeight = 0.35;
