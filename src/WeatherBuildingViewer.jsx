@@ -676,6 +676,7 @@ export default function WeatherBuildingViewer({
               <div className="wbv-building-id">{buildingId}</div>
               <div>
                 <h2>Current Weather</h2>
+                <h3>Location: Mambakkam, Chennai</h3>
                 <p>
                   Lat {clickedCoords.lat.toFixed(3)}, Lng{" "}
                   {clickedCoords.lng.toFixed(3)}
