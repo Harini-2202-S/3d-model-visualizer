@@ -1,0 +1,222 @@
+.wbv-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+  color: black;
+}
+
+.wbv-header {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 20;
+  text-align: center;
+}
+
+.wbv-modal-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.wbv-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.wbv-modal {
+  position: relative;
+  width: 90vw;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 40;
+}
+
+.wbv-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+  color: red;
+}
+
+.wbv-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 6px;
+}
+
+.wbv-building-id {
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 12px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.wbv-modal-content {
+  margin-top: 8px;
+}
+
+.wbv-error {
+  color: red;
+  font-size: 13px;
+}
+
+.wbv-weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.wbv-weather-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.wbv-col-span-2 {
+  grid-column: span 2;
+}
+
+.wbv-safe-area {
+  position: fixed;
+  bottom: 0;
+  inset-x: 0;
+  height: 24px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.6), transparent);
+  pointer-events: none;
+}
+
+/* WeatherBuildingViewer.css */
+/* 
+.wbv-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+}
+
+.wbv-header {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 10;
+  pointer-events: none;
+  color: black;
+}
+
+.wbv-modal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+
+.wbv-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.wbv-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  z-index: 21;
+  color: black;
+}
+
+.wbv-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.wbv-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.wbv-building-id {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wbv-modal-content {
+  font-size: 14px;
+}
+
+.wbv-error {
+  color: red;
+  font-weight: bold;
+}
+
+.wbv-weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.wbv-weather-card {
+  background: #f3f3f3;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.wbv-col-span-2 {
+  grid-column: span 2;
+}
+
+.wbv-safe-area {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+} */
