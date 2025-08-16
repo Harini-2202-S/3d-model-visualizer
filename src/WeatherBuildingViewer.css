@@ -7,19 +7,18 @@
   overflow: hidden;
   color: black;
 
-  /* handle notches/safe areas on iPhones */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
 
-/* Floating notes-style header on left */
+/* Floating notes-style */
 .wbv-header {
   position: absolute;
   top: 10px;
-  left: 20px; /* push it a little from the left */
-  transform: none; /* remove center alignment */
+  left: 20px;
+  transform: none;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   padding: 10px 14px;
@@ -27,18 +26,15 @@
   font-size: 14px;
   font-weight: 500;
   z-index: 20;
-  text-align: left;  /* align text like notes */
-  max-width: 220px; /* keep it note-sized */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  max-width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .wbv-header p {
   margin: 6px 0;
   font-size: clamp(11px, 1.8vw, 14px);
 }
-
-
-
 
 /* Fullscreen overlay for modal */
 .wbv-modal-overlay {
@@ -69,7 +65,7 @@
   z-index: 40;
 }
 
-/* Close button in top-right corner */
+/* Close button */
 .wbv-close-btn {
   position: absolute;
   top: 10px;
@@ -114,7 +110,7 @@
 /* Grid layout for weather info */
 .wbv-weather-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two columns */
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
@@ -126,7 +122,6 @@
   font-size: 13px;
 }
 
-/* Makes a grid item span both columns */
 .wbv-col-span-2 {
   grid-column: span 2;
 }
@@ -150,6 +145,6 @@
     height: auto;
   }
   .wbv-weather-grid {
-    grid-template-columns: 1fr !important; /* stack cards */
+    grid-template-columns: 1fr !important;
   }
 }
