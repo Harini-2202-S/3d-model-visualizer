@@ -642,8 +642,10 @@ export default function WeatherBuildingViewer({
   return (
     <div className="wbv-container">
       <div className="wbv-header">
-        Hover to highlight • Click building to view weather • Drag to orbit •
-        Pinch/scroll to zoom
+        <p>Hover to highlight buildings</p>
+        <p>Click a building to view weather</p>
+        <p>Drag to orbit</p>
+        <p>Pinch/scroll to zoom</p>
       </div>
 
       <Canvas
