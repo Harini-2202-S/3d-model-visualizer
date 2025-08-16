@@ -104,7 +104,7 @@ function Building({
 
   const handlePointerUp = (e) => {
     if (!isDragging.current) {
-      onClick && onClick(); // no argument
+      onClick && onClick(); 
     }
   };
 
@@ -229,10 +229,10 @@ function Building({
         );
       })}
 
-      {/* Windows per floor with visible frame structure */}
+      {/* Windows */}
       {[...Array(floors)].map((_, i) => {
-        if (i === 0) return null; // skip ground floor
-        const y = floorHeight / 2 + i * floorHeight + 0.5; // slightly raised
+        if (i === 0) return null; 
+        const y = floorHeight / 2 + i * floorHeight + 0.5; 
         return [-3, 3].map((x, j) => (
           <group key={`window-front-${i}-${j}`}>
             {/* Outer frame */}
@@ -255,7 +255,7 @@ function Building({
               <meshStandardMaterial color="#555" roughness={0.4} />
             </mesh>
 
-            {/* Optional four small panes */}
+            {/* small panes */}
             {[
               [-0.2, 0.2],
               [-0.2, 0.2],
@@ -287,17 +287,17 @@ function Building({
         ));
       })}
 
-      {/* Side 3D windows (one per floor) */}
+      {/* Side windows */}
       {[...Array(floors)].map((_, i) => {
-        if (i === 0) return null; // skip ground floor
-        const y = floorHeight / 1.35 + i * floorHeight; // vertical position
-        const z = -2; // center along depth
+        if (i === 0) return null; 
+        const y = floorHeight / 1.35 + i * floorHeight; 
+        const z = -2; 
         const windowWidth = 0.6;
         const windowHeight = 0.6;
         const windowDepth = 0.1;
         const frameThickness = 0.05;
 
-        // Function to generate a side window
+        // Function for side window
         const createSideWindow = (xPos) => (
           <group
             key={`side-window-${xPos > 0 ? "right" : "left"}-${i}`}
@@ -369,10 +369,10 @@ function Building({
         );
       })}
 
-      {/* Glass balconies and doors - same as previous code */}
+      {/* Balconies and doors */}
       {[...Array(floors)].map((_, i) => {
-        if (i === 0) return null; // skip ground floor
-        const y = floorHeight / 2 + i * floorHeight - 0.6; // lowered
+        if (i === 0) return null; 
+        const y = floorHeight / 2 + i * floorHeight - 0.6; 
         const balconyWidth = 3;
         const balconyDepth = 0.7;
         const railingHeight = 0.35;
@@ -506,7 +506,7 @@ function Building({
   );
 }
 
-// Subtle floating animation
+// Floating animation
 function FloatY({ children }) {
   const ref = useRef();
   useFrame(({ clock }) => {
@@ -546,7 +546,7 @@ function Scene({ gltfUrl, onBuildingClick }) {
             highlight={hovered}
             onPointerOver={() => setHovered(true)}
             onPointerOut={() => setHovered(false)}
-            onClick={() => onBuildingClick({ lat: 12.8385, lng: 80.1697 })} // ✅ correct
+            onClick={() => onBuildingClick({ lat: 12.8385, lng: 80.1697 })}
             onReady={() => {}}
           />
         </FloatY>
@@ -587,7 +587,7 @@ export default function WeatherBuildingViewer({
         clickedCoords.lat === coord.lat &&
         clickedCoords.lng === coord.lng
       ) {
-        return; // Already have weather for these coordinates
+        return;
       }
 
       setLoading(true);
@@ -605,7 +605,7 @@ export default function WeatherBuildingViewer({
     [clickedCoords, weather]
   );
 
-  // Close modal with Escape key
+  // Close modal
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") setModalOpen(false);
@@ -648,7 +648,7 @@ export default function WeatherBuildingViewer({
         shadows
         linear
         style={canvasStyle}
-        camera={{ position: [8, 10, 8], fov: 60 }}
+        camera={{ position: [8, 25, 8], fov: 60 }}
       >
         <Suspense fallback={<Html center>Loading 3D…</Html>}>
           <Scene gltfUrl={gltfUrl} onBuildingClick={onBuildingClick} />
